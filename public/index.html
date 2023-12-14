@@ -1,0 +1,184 @@
+<!-- DOCTYPE html significa que es pagina web html 5 -->
+<!DOCTYPE html>
+<!-- html es la etiqueta que indica el todo lo que va a ir en la web -->
+<html lang="en">
+	<!-- head es para la meta data -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- link hace referencia a otro archivo o libreria web como bootstrap -->
+		<link href="https://fonts.cdnfonts.com/css/colo-pro" rel="stylesheet" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+		<!-- title es el titulo que se ve en la pestaña -->
+		<title>PCBuilder</title>
+	</head>
+	<!-- body es el cuerpo del html donde esta la informacion visible -->
+	<body>
+		<!-- header es el encabezado de la pagina web -->
+		<header>
+			<!-- nav hace referencia que va a haber informacion de la navegacion de la web -->
+			<!-- class es un atributo de la etiqueta, normalmente utilizado para hacer refenreica
+			a la etiqueta en el css -->
+			<nav class="navbar fixed-top navbar-expand-lg">
+				<!-- div es un elemento html sin estructura -->
+				<div class="container-fluid">
+					<!-- a es para colocar links -->
+					<!-- img imagenes -->
+					<!-- href es a lo que se hace referencia (link o parte del doc) -->
+					<a class="navbar-brand" href="#portada"
+						><img
+							src="./img/logoNav.png"
+							style="color: #cad2c5; margin: auto"
+							class="logo"
+							alt="logo"
+					/></a>
+					<!-- button son botones -->
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarNavAltMarkup"
+						aria-controls="navbarNavAltMarkup"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<!-- span es para agrupar elementos en linea -->
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div
+						class="collapse navbar-collapse"
+						id="navbarNavAltMarkup"
+						style="width: 100%"
+					>
+						<div class="navbar-nav" style="width: 100%">
+							<div class="navbar-nav">
+								<a
+									class="nav-link active"
+									aria-current="page"
+									href="#qs"
+									style="color: #cad2c5; margin: auto"
+									>Quienes somos</a
+								>
+								<a
+									class="nav-link"
+									style="color: #cad2c5; margin: auto"
+									href="#qh"
+									>Que hacemos</a
+								>
+							</div>
+							<a
+								class="nav-link login"
+								style="color: #cad2c5; margin-left: auto"
+								href="#"
+								>Login</a
+							>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<!-- main es el contenido principal de la pagina -->
+		<main>
+			<!-- section hace referencia a una sección de la pagina web -->
+			<section class="jumbotron center" id="portada">
+				<h2 class="display-1 font">PCBUILDER</h2>
+				<h2 class="display-3 font">LOS MEJORES SETUPS</h2>
+				<h2 class="display-6 font">By Paulina</h2>
+				<!-- h3 son títulos  -->
+			</section>
+			<section class="productos center pad" id="qs">
+				<!-- h1 titulo principal solo debe de existir uno por html para el SEO de la web -->
+				<h1 class="display-3 font"><b>PCBuilder</b></h1>
+				<!-- h2 títulos -->
+				<h2 class="display-6">Quienes somos</h2>
+				<section class="center somos">
+					<img src="./img/setup2new.jpg" alt="juego" class="img-qs" />
+					<div class="text">
+						<!-- p son párrafos -->
+						<!-- b negritas -->
+						<!-- br salto de linea  -->
+						<p class="texto">
+							Somos <b class="font display-6">PCBuilders</b>, nos
+							encargamos de crear lo que tu mente decide imaginar.
+							<br />
+							creamos los setups de tus sueños y el armado de tu
+							computadora deseada.
+							<a
+								id="link2"
+								href="https://www.instagram.com/mbb4ppe/"
+								class="font"
+								>- Instagram -</a
+							>
+						</p>
+					</div>
+				</section>
+			</section>
+			<section class="servicios center pad" id="qh">
+				<h2 class="display-6">Que hacemos</h2>
+				<section class="tarjetas center" id="cardElem"></section>
+			</section>
+			<section class="productos center pad" id="qs">
+				<div class="menu">
+					<h3 class="pesta" data-target="#comentarios">COMENTAR</h3>
+					<h3 class="pesta" data-target="#comm">COMENTARIOS</h3>
+				</div>
+				<hr />
+				<div
+					data-content
+					id="comm"
+					class="cotizacion mb-3 center"
+				></div>
+				<iframe
+					name="dummyframe"
+					id="dummyframe"
+					style="display: none"
+				></iframe>
+				<div
+					data-content
+					id="comentarios"
+					class="comentarios mb-3 center"
+				>
+					<form
+						action="/api/comment/create"
+						method="POST"
+						target="dummyframe"
+					>
+						<input
+							type="text"
+							class="form-control mb-3"
+							id="exampleFormControlInput1"
+							name="name"
+							placeholder="Nombre"
+						/>
+						<input
+							type="text"
+							class="form-control comments mb-3"
+							id="exampleFormControlInput1"
+							name="comentario"
+							placeholder="Comentario"
+						/>
+						<button onclick="location.reload()">Enviar</button>
+					</form>
+					<!-- input valores de entrada -->
+				</div>
+			</section>
+		</main>
+		<!-- footer es el pie de pagina -->
+		<footer class="center servicios">
+			<h6>Designed by Paulina</h6>
+		</footer>
+		<script src="./index.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
